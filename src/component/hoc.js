@@ -113,12 +113,14 @@ class HOC extends Component {
     };
 
     render() {
+        const { items } = this.state;
         return (
             <DragDropContext>
                 <Drag 
                     getListStyle={getListStyle} 
                     getItemStyle={getItemStyle} 
                     droppableId='droppable'
+                    items={items}
                     />
             </DragDropContext>
         )
