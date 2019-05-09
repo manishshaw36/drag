@@ -6,14 +6,14 @@ class Drag extends Component {
     // Normally you would want to split things out into separate components.
     // But in this example everything is just done in one place for simplicity
     render() {
-        const { getListStyle, getItemStyle, droppableId } = this.props
+        const { getListStyle, getItemStyle, droppableId, items } = this.props
         return (
             <Droppable droppableId={droppableId}>
                 {(provided, snapshot) => (
                     <div
                         ref={provided.innerRef}
                         style={getListStyle(snapshot.isDraggingOver)}>
-                        {this.state.items.map((item, index) => (
+                        {items.map((item, index) => (
                             <Draggable
                                 key={item.id}
                                 draggableId={item.id}
